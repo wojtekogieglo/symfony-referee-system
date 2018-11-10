@@ -1,0 +1,54 @@
+<nav>
+    <div class="navbar navbar-inverse navbar-fixed-top" id = "top" >
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Button for smallest screens -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand	" href="generateAdminView"> <img src="/images/logo.png" alt="PZPN Łączy nas piłka"></a>
+            </div>
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a>Kluby</a></li>
+                        <li><a>Sędziowie</a></li>
+                        <li><a>Mecze</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dodaj<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a>Klub</a></li>
+                                <li><a>Sędziego</a></li>
+                                <li><a> Spotkanie</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a>Wyloguj się</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            {% elseif is_granted('ROLE_REFEREE') %}
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a>Mecze</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profil<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a>Zobacz profil</a></li>
+                                <li><a>Zmień hasło</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a>Wyloguj się</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            {% else %}
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a class="btn" href="signin.html">Zaloguj się</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            {% endif %}
+
+        </div>
+    </div>
+</nav>
