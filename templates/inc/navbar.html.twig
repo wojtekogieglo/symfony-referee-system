@@ -4,7 +4,7 @@
             <div class="navbar-header">
                 <!-- Button for smallest screens -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand	" href="generateAdminView"> <img src="/images/logo.png" alt="PZPN Łączy nas piłka"></a>
+                <a class="navbar-brand	" href="/"> <img src="/images/logo.png" alt="PZPN Łączy nas piłka"></a>
             </div>
             {% if is_granted('ROLE_ADMIN') %}
                 <div class="navbar-collapse collapse">
@@ -22,7 +22,7 @@
                             </ul>
                         </li>
 
-                        <li><a>Wyloguj się</a></li>
+                        <li><a href="logout">Wyloguj się</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             {% elseif is_granted('ROLE_REFEREE') %}
@@ -44,7 +44,7 @@
             {% else %}
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav pull-right">
-                        <li><a class="btn" href="signin.html">Zaloguj się</a></li>
+                        <li><a class="btn" href="login">Zaloguj się</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             {% endif %}

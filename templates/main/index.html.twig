@@ -3,16 +3,25 @@
 {% block title %} RefereeApp {% endblock %}
 
 {% block body %}
-
-    <header id="head">
-        <div class="container">
-            <div class="row">
-                <h1 class="lead">#REFEREEAPP</h1>
-                <p><a class="btn btn-action btn-lg" href = "#" role="button">ZALOGUJ SIĘ</a></p>
+    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
+        <header id="head">
+            <div class="container">
+                <div class="row">
+                    <h1 class="lead">#REFEREEAPP</h1>
+                    <p><a class="btn btn-action btn-lg" href = "#" role="button">SPOTKANIA</a></p>
+                </div>
             </div>
-        </div>
-    </header>
-
+        </header>
+    {% else %}
+        <header id="head">
+            <div class="container">
+                <div class="row">
+                    <h1 class="lead">#REFEREEAPP</h1>
+                    <p><a class="btn btn-action btn-lg" href = "login" role="button">ZALOGUJ SIĘ</a></p>
+                </div>
+            </div>
+        </header>
+    {% endif %}
 
 
 {% endblock %}

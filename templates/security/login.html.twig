@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+
+    <header id="head" class="secondary"></header>
+
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Zaloguj się</li>
+        </ol>
+
+        <div class="row">
+
+            <!-- Article main content -->
+            <article class="col-xs-12 maincontent">
+                <header class="page-header">
+                    <h1 class="page-title">Zaloguj się</h1>
+                </header>
+
+                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h3 class="thin text-center">Zaloguj się</h3>
+                            <hr>
+
+                            <form method="post">
+                                <div class="top-margin">
+                                    <label for="inputEmail">Email<span class="text-danger">*</span></label>
+                                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+
+                                </div>
+                                <div class="top-margin">
+                                    <label for="inputPassword">Hasło<span class="text-danger">*</span></label>
+                                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                </div>
+                                <input type="hidden" name="_csrf_token"
+                                       value="{{ csrf_token('authenticate') }}"
+                                >
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <button class="btn btn-action" type="submit">Zaloguj się</button>
+                                    </div>
+                                </div>
+                            </form>
+                            {% if error %}
+                                <br>
+                                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+            <!-- /Article -->
+
+        </div>
+    </div>	<!-- /container -->
+    <div class="top-space"></div>
+{% endblock %}

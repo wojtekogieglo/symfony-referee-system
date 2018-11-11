@@ -16,6 +16,10 @@
 	#head .lead { font-size: 34px;}
 }
 
+.wholePage{
+	min-height: 100vh;
+}
+
 
 /* Autohide navbar */
 .slideUp { top:-100px; }
