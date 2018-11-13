@@ -22,9 +22,10 @@ class Clubs
     private $club_name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\League")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $league;
+    private $league_id;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -32,9 +33,10 @@ class Clubs
     private $stadium;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="integer")
      */
     private $founded_year;
+
 
     public function getId(): ?int
     {
@@ -53,14 +55,14 @@ class Clubs
         return $this;
     }
 
-    public function getLeague(): ?string
+    public function getLeagueId(): ?League
     {
-        return $this->league;
+        return $this->league_id;
     }
 
-    public function setLeague(string $league): self
+    public function setLeagueId(?League $league_id): self
     {
-        $this->league = $league;
+        $this->league_id = $league_id;
 
         return $this;
     }
@@ -77,12 +79,12 @@ class Clubs
         return $this;
     }
 
-    public function getFoundedYear(): ?string
+    public function getFoundedYear(): ?int
     {
         return $this->founded_year;
     }
 
-    public function setFoundedYear(string $founded_year): self
+    public function setFoundedYear(int $founded_year): self
     {
         $this->founded_year = $founded_year;
 

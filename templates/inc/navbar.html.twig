@@ -9,20 +9,20 @@
             {% if is_granted('ROLE_ADMIN') %}
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav pull-right">
-                        <li><a>Kluby</a></li>
+                        <li><a href = "/club">Kluby</a></li>
                         <li><a>Sędziowie</a></li>
                         <li><a>Mecze</a></li>
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dodaj<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a>Klub</a></li>
+                                <li><a href = "/club/new">Klub</a></li>
                                 <li><a>Sędziego</a></li>
                                 <li><a> Spotkanie</a></li>
                             </ul>
                         </li>
 
-                        <li><a href="logout">Wyloguj się</a></li>
+                        <li><a href="/logout">Wyloguj się</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             {% elseif is_granted('ROLE_REFEREE') %}

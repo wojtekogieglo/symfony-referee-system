@@ -47,4 +47,24 @@ class ClubsRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getAll(): array {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT clubs FROM App\Entity\Clubs clubs'
+        );
+
+        return $query->execute();
+    }
+
+    public function getAllWithKey(): array {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+          'SELECT clubs, league FROM App\Entity\Clubs clubs LEFT JOIN clubs.league_id league'
+        );
+
+        return $query->execute();
+    }
 }

@@ -17,6 +17,12 @@ class Games
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\League")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $league_id;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Clubs")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -40,7 +46,7 @@ class Games
     private $season;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="integer")
      */
     private $match_day;
 
@@ -60,7 +66,7 @@ class Games
     private $score;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $yellow_cards;
 
@@ -74,10 +80,21 @@ class Games
      */
     private $penalties;
 
-
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getLeagueId(): ?League
+    {
+        return $this->league_id;
+    }
+
+    public function setLeagueId(?League $league_id): self
+    {
+        $this->league_id = $league_id;
+
+        return $this;
     }
 
     public function getClubIdhome(): ?Clubs
@@ -128,12 +145,12 @@ class Games
         return $this;
     }
 
-    public function getMatchDay(): ?string
+    public function getMatchDay(): ?int
     {
         return $this->match_day;
     }
 
-    public function setMatchDay(string $match_day): self
+    public function setMatchDay(int $match_day): self
     {
         $this->match_day = $match_day;
 
@@ -176,12 +193,12 @@ class Games
         return $this;
     }
 
-    public function getYellowCards(): ?string
+    public function getYellowCards(): ?int
     {
         return $this->yellow_cards;
     }
 
-    public function setYellowCards(?string $yellow_cards): self
+    public function setYellowCards(?int $yellow_cards): self
     {
         $this->yellow_cards = $yellow_cards;
 
@@ -211,5 +228,4 @@ class Games
 
         return $this;
     }
-
 }
