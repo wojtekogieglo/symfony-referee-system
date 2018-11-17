@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} RefereeApp {% endblock %}
+
+{% block body %}
+
+    <header id="head" class="secondary"></header>
+
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Kluby</li>
+        </ol>
+
+        <div class="row">
+
+            <!-- Article main content -->
+            <article class="col-xs-12 maincontent">
+                <header class="page-header">
+                    <h1 class="page-title">Kluby</h1>
+                </header>
+
+                <table id = "tableList" class="table table-striped" >
+                    <thead>
+                    <tr>
+                        <th>Nazwa klubu</th>
+                        <th>Liga &nbsp</th>
+                        <th>Stadion &nbsp</th>
+                        <th>Rok założenia</th>
+                        <th>Opcje</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for club in clubs %}
+                    <tr>
+                        <td>{{ club.clubName }}</td>
+                        <td>{{ club.leagueId.leagueName }}</td>
+                        <td>{{ club.stadium }}</td>
+                        <td>{{ club.foundedYear }}</td>
+                        <td>
+                            <a href = "/club/edit/{{ club.id }}"
+                               class="btn btn-default btn-xs"
+                               role="button">Edytuj</a>&nbsp&nbsp
+                            <a href="#"
+                               class="btn btn-danger btn-xs delete"
+                               data-type = "club"
+                               data-id="{{ club.id }}">Usuń</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </article>
+
+        </div>
+    </div>
+    <div class="top-space"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/main1.js"></script>
+{% endblock %}

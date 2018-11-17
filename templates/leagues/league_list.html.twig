@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} RefereeApp {% endblock %}
+
+{% block body %}
+
+    <header id="head" class="secondary"></header>
+
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Ligi</li>
+        </ol>
+
+        <div class="row">
+
+            <!-- Article main content -->
+            <article class="col-xs-12 maincontent">
+                <header class="page-header">
+                    <h1 class="page-title">Ligi</h1>
+                </header>
+
+                <table id = "tableList" class="table table-striped" >
+                    <thead>
+                    <tr>
+                        <th>Nazwa ligi</th>
+                        <th>Opcje</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for league in leagues %}
+                        <tr>
+                            <td>{{ league.leagueName }}</td>
+                            <div class="text-right">
+                                <td>
+                                    <a href = "/league/edit/{{ league.id }}"
+                                       class="btn btn-default btn-xs"
+                                       role="button">Edytuj</a>&nbsp&nbsp
+                                    <a href="#"
+                                       class="btn btn-danger btn-xs delete"
+                                       data-type="league"
+                                       data-id="{{ league.id }}">Usuń</a>
+                                </td>
+                            </div>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </article>
+
+        </div>
+    </div>
+    <div class="top-space"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/main1.js"></script>
+{% endblock %}

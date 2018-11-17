@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} RefereeApp {% endblock %}
+
+{% block body %}
+
+    <header id="head" class="secondary"></header>
+
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Dodaj ligę</li>
+        </ol>
+        <article class="col-xs-12">
+            <header class="page-header">
+                <h1 class="page-title">Dodaj ligę</h1>
+            </header>
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="thin text-center">Dodaj ligę</h3>
+                        <hr>
+                        {{ form_start(form) }}
+                        <div class="form-group">
+                            {{ form_label(form.league_name) }}
+                            {{ form_widget(form.league_name) }}
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12 text-right">
+                                {{ form_label(form.save) }}
+                                {{ form_widget(form.save) }}
+                            </div>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="top-space"></div>
+
+{% endblock %}
