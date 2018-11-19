@@ -108,7 +108,7 @@ class GameController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $clubsRepository = $em->getRepository(Clubs::class);
 
-        // Search the neighborhoods that belongs to the city with the given id as GET parameter "cityid"
+        // Search the clubs that belongs to the league with the given id as GET parameter "leagueId"
         $clubs = $clubsRepository->createQueryBuilder("q")
             ->where("q.league_id = :leagueId")
             ->setParameter("leagueId", $request->query->get("leagueId"))
@@ -116,7 +116,6 @@ class GameController extends AbstractController
             ->getResult();
 
         // Serialize into an array the data that we need, in this case only name and id
-        // Note: you can use a serializer as well, for explanation purposes, we'll do it manually
         $responseArray = array();
         foreach($clubs as $club){
             $responseArray[] = array(
@@ -125,10 +124,7 @@ class GameController extends AbstractController
             );
         }
 
-        // Return array with structure of the neighborhoods of the providen city id
+        // Return array with structure of the clubs of the providen league id
         return new JsonResponse($responseArray);
-
-        // e.g
-        // [{"id":"3","name":"Treasure Island"},{"id":"4","name":"Presidio of San Francisco"}]
     }
 }
