@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} RefereeApp {% endblock %}
+
+{% block body %}
+
+    <header id="head" class="secondary"></header>
+
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Spotkania</li>
+        </ol>
+
+        <div class="row">
+
+            <!-- Article main content -->
+            <article class="col-xs-12 maincontent">
+                <header class="page-header">
+                    <h1 class="page-title">Spotkania</h1>
+                </header>
+
+                <table id = "tableList" class="table table-striped" >
+                    <thead>
+                    <tr>
+                        <th>Liga</th>
+                        <th>Drużyna gospodarzy</th>
+                        <th>Drużyna gości</th>
+                        <th>Sędzia</th>
+                        <th>Data</th>
+                        <th>Sezon</th>
+                        <th>Kolejka</th>
+                        <th>Runda</th>
+                        <th>Opcje</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for game in games %}
+                        <tr>
+                            <td>{{ game.leagueId }}</td>
+                            <td>{{ game.clubIdHome }}</td>
+                            <td>{{ game.clubIdAway }}</td>
+                            <td>{{ game.refereeId }}</td>
+                            <td>{{ game.date|date("d.m.Y") }}</td>
+                            <td>{{ game.season }}</td>
+                            <td>{{ game.matchDay }}</td>
+                            <td>{{ game.round }}</td>
+                            <td>
+                                <a href = "/game/edit/{{ game.id }}"
+                                   class="btn btn-default btn-xs"
+                                   role="button">Edytuj</a>&nbsp&nbsp
+                                <a href="#"
+                                   class="btn btn-danger btn-xs delete"
+                                   data-type = "game"
+                                   data-id="{{ game.id }}">Usuń</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </article>
+
+        </div>
+    </div>
+    <div class="top-space"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/delete.js"></script>
+{% endblock %}

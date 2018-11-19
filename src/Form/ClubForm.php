@@ -21,7 +21,6 @@ class ClubForm extends AbstractType{
             ->add('league_id', EntityType::class, array(
                 'label' => 'Liga',
                 'class' => League::class,
-                'choice_label' => 'leagueName',
                 'attr' => array('class' => 'form-control')))
             ->add('stadium', TextType::class, array(
                 'label' => 'Stadion:',

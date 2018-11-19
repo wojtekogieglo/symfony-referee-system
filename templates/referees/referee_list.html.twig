@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} RefereeApp {% endblock %}
+
+{% block body %}
+
+    <header id="head" class="secondary"></header>
+
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Sędziowie</li>
+        </ol>
+
+        <div class="row">
+
+            <!-- Article main content -->
+            <article class="col-xs-12 maincontent">
+                <header class="page-header">
+                    <h1 class="page-title">Sędziowie</h1>
+                </header>
+
+                <table id = "tableList" class="table table-striped" >
+                    <thead>
+                    <tr>
+                        <th>Imię</th>
+                        <th>Nazwisko &nbsp</th>
+                        <th>Data urodzenia &nbsp</th>
+                        <th>Wydział sędziowski</th>
+                        <th>Kategoria</th>
+                        <th>Opcje</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for referee in referees %}
+                        <tr>
+                            <td>{{ referee.name }}</td>
+                            <td>{{ referee.surname }}</td>
+                            <td>{{ referee.birthdate|date("d.m.Y") }}</td>
+                            <td>{{ referee.wydzialsedziowski }}</td>
+                            <td>{{ referee.level }}</td>
+                            <td>
+                                <a href = "/referee/edit/{{ referee.id }}"
+                                   class="btn btn-default btn-xs"
+                                   role="button">Edytuj</a>&nbsp&nbsp
+                                <a href="#"
+                                   class="btn btn-danger btn-xs delete"
+                                   data-type = "referee"
+                                   data-id="{{ referee.id }}">Usuń</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </article>
+
+        </div>
+    </div>
+    <div class="top-space"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/delete.js"></script>
+{% endblock %}

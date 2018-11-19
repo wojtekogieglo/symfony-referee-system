@@ -19,7 +19,7 @@ class ClubController extends AbstractController
     public function clubList(){
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-        $clubs = $this->getDoctrine()->getRepository(Clubs::class)->getAllWithKey();
+        $clubs = $this->getDoctrine()->getRepository(Clubs::class)->findAll();
 
         return $this->render('clubs/club_list.html.twig', array
         ('clubs' => $clubs  ));
