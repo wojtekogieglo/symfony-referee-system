@@ -90,4 +90,8 @@ class Clubs
 
         return $this;
     }
+
+    public function __toString() {
+        return (string) $this->getClubName();
+    }
 }

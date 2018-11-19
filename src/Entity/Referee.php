@@ -123,4 +123,9 @@ class Referee
 
         return $this;
     }
+
+    public function __toString() {
+        return (string) $this->getName()." ".(string) $this->getSurname();
+    }
+
 }
