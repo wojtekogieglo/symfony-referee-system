@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 
 class ClubController extends AbstractController
@@ -27,7 +27,7 @@ class ClubController extends AbstractController
     /**
      * @Route("/club/new", methods = {"GET", "POST"}, name = "new_club")
      */
-    public function newClub(Request $request){
+    public function newClub(Request $request, ValidatorInterface $validator){
 
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $club = new Clubs();
@@ -35,6 +35,8 @@ class ClubController extends AbstractController
         $form = $this->createForm(ClubForm::class, $club);
 
         $form->handleRequest($request);
+
+        $errors = $validator->validate($club);
 
         if($form->isSubmitted() && $form->isValid()){
             $club = $form->getData();
@@ -47,7 +49,8 @@ class ClubController extends AbstractController
         }
 
         return $this->render('clubs/new_club.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'errors' => $errors
         ));
     }
 
@@ -55,13 +58,16 @@ class ClubController extends AbstractController
      * @Route("/club/edit/{id}", name="edit_club")
      * Method({"GET", "POST"})
      */
-    public function edit(Request $request, $id){
+    public function edit(Request $request, $id, ValidatorInterface $validator){
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $club = $this->getDoctrine()->getRepository(Clubs::class)->find($id);
 
         $form = $this->createForm(ClubForm::class, $club);
 
         $form->handleRequest($request);
+
+        $errors = $validator->validate($club);
+
 
         if($form->isSubmitted() && $form->isValid()){
 
@@ -72,7 +78,8 @@ class ClubController extends AbstractController
         }
 
         return $this->render('clubs/new_club.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'errors' => $errors
         ));
     }
 

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\LeagueRepository")
@@ -18,6 +19,12 @@ class League
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 3,
+     *      max = 255,
+     *      minMessage = "Nazwa ligi musi składać się przynajmniej z  {{ limit }} znaków",
+     *      maxMessage = "Nazwa ligi musi mieć mniej niż {{ limit }} znaków"
+     * )
      */
     private $league_name;
 

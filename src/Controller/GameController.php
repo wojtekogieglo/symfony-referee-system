@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 
 class GameController extends AbstractController
@@ -31,7 +31,7 @@ class GameController extends AbstractController
     /**
      * @Route("/game/new", methods = {"GET", "POST"}, name = "new_game")
      */
-    public function newGame(Request $request){
+    public function newGame(Request $request, ValidatorInterface $validator){
 
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $game = new Games();
@@ -39,6 +39,9 @@ class GameController extends AbstractController
         $form = $this->createForm(GamesForm::class, $game);
 
         $form->handleRequest($request);
+
+        $errors = $validator->validate($game);
+
 
         if($form->isSubmitted() && $form->isValid()){
             $game = $form->getData();
@@ -51,7 +54,8 @@ class GameController extends AbstractController
         }
 
         return $this->render('games/new_game.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'errors' => $errors
         ));
     }
 
@@ -59,13 +63,15 @@ class GameController extends AbstractController
      * @Route("/game/edit/{id}", name="edit_game")
      * Method({"GET", "POST"})
      */
-    public function edit(Request $request, $id){
+    public function edit(Request $request, $id, ValidatorInterface $validator){
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $game = $this->getDoctrine()->getRepository(Games::class)->find($id);
 
         $form = $this->createForm(GamesForm::class, $game);
 
         $form->handleRequest($request);
+
+        $errors = $validator->validate($game);
 
         if($form->isSubmitted() && $form->isValid()){
 
@@ -76,7 +82,8 @@ class GameController extends AbstractController
         }
 
         return $this->render('games/new_game.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'errors' => $errors
         ));
     }
 

@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} RefereeApp {% endblock %}
 
 {% block body %}
 
@@ -46,6 +45,18 @@
                             </div>
                         </div>
                         {{ form_end(form) }}
+
+                        {% if errors|length %}
+                            <br>
+                            <div class="alert alert-danger">
+                                <ul>
+                                    {% for error in errors %}
+                                        <li>{{ error.message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
                     </div>
                 </div>
             </div>

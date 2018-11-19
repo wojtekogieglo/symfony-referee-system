@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RefereeRepository")
@@ -18,11 +20,23 @@ class Referee
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 255,
+     *      minMessage = "Imię musi składać się z przynajmniej {{ limit }} znaków",
+     *      maxMessage = "Imię nie może być dłuższe niż {{ limit }} znaków"
+     * )
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 255,
+     *      minMessage = "Nazwisko musi składać się przynajmniej z {{ limit }} znaków",
+     *      maxMessage = "Nazwisko nie może być dłuższe niż {{ limit }} znaków"
+     * )
      */
     private $surname;
 
@@ -33,6 +47,12 @@ class Referee
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 255,
+     *      minMessage = "Wydział sędziowski musi składać się przynajmniej z {{ limit }} znaków",
+     *      maxMessage = "Wydział sędziowski nie może być dłuższy niż {{ limit }} znaków"
+     * )
      */
     private $wydzial_sedziowski;
 

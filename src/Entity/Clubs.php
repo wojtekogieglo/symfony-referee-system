@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ClubsRepository")
@@ -18,6 +20,12 @@ class Clubs
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 255,
+     *      minMessage = "Nazwa klubu musi składać się z przynajmniej {{ limit }} znaków",
+     *      maxMessage = "Nazwa klubu nie może być dłuższa niż {{ limit }} znaków"
+     * )
      */
     private $club_name;
 
@@ -29,11 +37,25 @@ class Clubs
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 255,
+     *      minMessage = "Nazwa stadionu musi składać się z przynajmniej {{ limit }} znaków",
+     *      maxMessage = "Nazwa stadionu nie może być dłuższa niż {{ limit }} znaków"
+     * )
      */
     private $stadium;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\LessThanOrEqual(
+     *     value = 2018,
+     *     message="Rok założenia musi być mniejszy niż 2018"
+     * )
+     * @Assert\GreaterThanOrEqual(
+     *     value = 1880,
+     *     message="Rok założenia musi być większy niż 1880"
+     * )
      */
     private $founded_year;
 

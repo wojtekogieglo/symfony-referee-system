@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 
 class RefereeController extends AbstractController
@@ -28,7 +29,7 @@ class RefereeController extends AbstractController
     /**
      * @Route("/referee/new", methods = {"GET", "POST"}, name = "new_referee")
      */
-    public function newReferee(Request $request, UserPasswordEncoderInterface $passwordEncoder){
+    public function newReferee(Request $request, UserPasswordEncoderInterface $passwordEncoder, ValidatorInterface $validator){
 
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $referee = new Referee();
@@ -37,6 +38,8 @@ class RefereeController extends AbstractController
         $form = $this->createForm(RefereeForm::class, $referee);
 
         $form->handleRequest($request);
+
+        $errors = $validator->validate($referee);
 
         if($form->isSubmitted() && $form->isValid()){
             $referee = $form->getData();
@@ -57,7 +60,8 @@ class RefereeController extends AbstractController
         }
 
         return $this->render('referees/new_referee.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'errors' => $errors
         ));
     }
 
@@ -65,7 +69,7 @@ class RefereeController extends AbstractController
      * @Route("/referee/edit/{id}", name="edit_referee")
      * Method({"GET", "POST"})
      */
-    public function edit(Request $request, $id){
+    public function edit(Request $request, $id, ValidatorInterface $validator){
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $referee = $this->getDoctrine()->getRepository(Referee::class)->find($id);
         $user = $this->getDoctrine()->getRepository(User::class)->find($referee->getUserId());
@@ -74,6 +78,8 @@ class RefereeController extends AbstractController
         $form = $this->createForm(RefereeForm::class, $referee);
         $form->get('email')->setData($user->getEmail());
         $form->handleRequest($request);
+
+        $errors = $validator->validate($referee);
 
         if($form->isSubmitted() && $form->isValid()){
             $user->setEmail($form["email"]->getData());
@@ -85,7 +91,8 @@ class RefereeController extends AbstractController
         }
 
         return $this->render('referees/new_referee.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'errors' => $errors
         ));
     }
 

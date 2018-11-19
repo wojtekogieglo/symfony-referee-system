@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\GamesRepository")
@@ -42,6 +45,12 @@ class Games
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 8,
+     *      max = 255,
+     *      minMessage = "Sezon musi składać się przynajmniej z {{ limit }} znaków",
+     *      maxMessage = "Sezon nie może być dłuższy niż {{ limit }} znaków"
+     * )
      */
     private $season;
 
@@ -227,5 +236,15 @@ class Games
         $this->penalties = $penalties;
 
         return $this;
+    }
+    /**
+     * @Assert\Callback
+     */
+    public function validate(ExecutionContextInterface $context, $payload)
+    {
+        if($this->getClubIdhome() === $this->getClubIdAway())
+            $context->buildViolation('Drużyny gospodarzy musi być inna niż drużyna gości!')
+                ->atPath('club_id_home')
+                ->addViolation();
     }
 }

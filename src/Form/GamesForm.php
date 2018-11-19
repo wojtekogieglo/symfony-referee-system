@@ -12,6 +12,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -66,7 +67,7 @@ class GamesForm extends AbstractType{
                     'Wiosenna' => 'Wiosenna'
                 ),
                 'attr' => array('class' => 'form-control')))
-            ->add('match_day', TextType::class, array(
+            ->add('match_day', IntegerType::class, array(
                 'label' => 'Kolejka:',
                 'attr' => array('class' => 'form-control')))
             ->add('save', SubmitType::class, array(
