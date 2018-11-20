@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\AdminControllers;
 
 use App\Entity\Clubs;
 use App\Form\ClubForm;
@@ -14,12 +14,14 @@ class ClubController extends AbstractController
 {
 
     /**
-     * @Route("/club", methods = {"GET"}, name = "club_list")
+     * @Route("/club", methods = {"GET", "POST"}, name = "club_list")
      */
-    public function clubList(){
+    public function clubList(Request $request){
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-        $clubs = $this->getDoctrine()->getRepository(Clubs::class)->findAll();
+        $searchName = $request->query->get('search_name');
+
+        $clubs = $this->getDoctrine()->getRepository(Clubs::class)->findAllByClubName($request, $searchName);
 
         return $this->render('clubs/club_list.html.twig', array
         ('clubs' => $clubs  ));

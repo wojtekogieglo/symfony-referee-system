@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\AdminControllers;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;

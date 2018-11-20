@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\AdminControllers;
 
 use App\Entity\League;
 use App\Form\LeagueForm;
@@ -16,10 +16,13 @@ class LeagueController extends AbstractController
     /**
      * @Route("/league", methods = {"GET"}, name = "league_list")
      */
-    public function leagueList(){
+    public function leagueList(Request $request){
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-        $leagues = $this->getDoctrine()->getRepository(League::class)->findAll();
+        $search_leagueName = $request->query->get('search_leagueName');
+
+
+        $leagues = $this->getDoctrine()->getRepository(League::class)->findAllByLeagueName($request, $search_leagueName);
 
         return $this->render('leagues/league_list.html.twig', array
         ('leagues' => $leagues));

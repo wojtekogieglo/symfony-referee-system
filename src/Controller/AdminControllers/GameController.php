@@ -1,10 +1,10 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\AdminControllers;
 
 use App\Entity\Clubs;
 use App\Entity\Games;
-use App\Form\ClubForm;
 use App\Form\GamesForm;
+use App\Repository\GamesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,10 +19,13 @@ class GameController extends AbstractController
     /**
      * @Route("/game", methods = {"GET"}, name = "game_list")
      */
-    public function gameList(){
+    public function gameList(Request $request){
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-        $games = $this->getDoctrine()->getRepository(Games::class)->findAll();
+        $search_leagueName = $request->query->get('search_leagueName');
+
+        $games = $this->getDoctrine()->getRepository(Games::class)
+            ->findAllByLeagueName($request, $search_leagueName);
 
         return $this->render('games/game_list.html.twig', array
         ('games' => $games));
@@ -41,7 +44,6 @@ class GameController extends AbstractController
         $form->handleRequest($request);
 
         $errors = $validator->validate($game);
-
 
         if($form->isSubmitted() && $form->isValid()){
             $game = $form->getData();
@@ -104,7 +106,7 @@ class GameController extends AbstractController
     }
 
     /**
-     * Returns a JSON string with the neighborhoods of the City with the providen id.
+     * Returns a JSON string with the clubs of the League with the providen id.
      * @Route("/get-clubs-from-league", methods = {"GET"}, name = "games_list_clubs")
      * @param Request $request
      * @return JsonResponse

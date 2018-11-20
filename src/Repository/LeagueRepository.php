@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\League;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @method League|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,9 +15,11 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class LeagueRepository extends ServiceEntityRepository
 {
-    public function __construct(RegistryInterface $registry)
+    protected $container;
+    public function __construct(RegistryInterface $registry, ContainerInterface $container)
     {
         parent::__construct($registry, League::class);
+        $this->container = $container;
     }
 
     // /**
@@ -48,4 +51,26 @@ class LeagueRepository extends ServiceEntityRepository
     }
     */
 
+    public function findAllByLeagueName($request, $search_leagueName){
+        $entityManager = $this->getEntityManager();
+        $container = $this->container;
+
+
+        $club = $entityManager->createQueryBuilder()
+            ->select('l')
+            ->from(League::class, 'l')
+            ->where("l.league_name LIKE :leagueName")
+            ->setParameter('leagueName',  $search_leagueName.'%')
+            ->getQuery()
+            ->getResult();
+
+        $pagenator = $container->get('knp_paginator');
+        $result = $pagenator->paginate(
+            $club,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 5)
+        );
+
+        return $result;
+    }
 }

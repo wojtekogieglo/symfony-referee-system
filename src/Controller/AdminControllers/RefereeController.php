@@ -1,9 +1,10 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\AdminControllers;
 
 use App\Entity\Referee;
 use App\Entity\User;
 use App\Form\RefereeForm;
+use App\Repository\RefereeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,10 +18,12 @@ class RefereeController extends AbstractController
     /**
      * @Route("/referee", methods = {"GET"}, name = "referee_list")
      */
-    public function refereeList(){
+    public function refereeList(Request $request){
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-        $referees = $this->getDoctrine()->getRepository(Referee::class)->findAll();
+        $search_surname = $request->query->get('search_surname');
+
+        $referees = $this->getDoctrine()->getRepository(Referee::class)->findAllByRefereeSurname($request, $search_surname);
 
         return $this->render('referees/referee_list.html.twig', array
         ('referees' => $referees  ));

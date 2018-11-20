@@ -20,12 +20,21 @@
                     <h1 class="page-title">Sędziowie</h1>
                 </header>
 
+                <div id="rightSideFormSearch">
+                    <form id="search-form" class="pure-form pure-form-stacked">
+                        <fieldset>
+                            <p>  <input type="text" name = "search_surname" id = "search_surname" placeholder="Nazwisko"/></p>
+                            <button href = "/referee" type="submit" class="btn btn-default btn-sm">Szukaj</button>
+                        </fieldset>
+                    </form>
+                </div>
+
                 <table id = "tableList" class="table table-striped" >
                     <thead>
                     <tr>
                         <th>Imię</th>
-                        <th>Nazwisko &nbsp</th>
-                        <th>Data urodzenia &nbsp</th>
+                        <th>Nazwisko</th>
+                        <th>Data urodzenia</th>
                         <th>Wydział sędziowski</th>
                         <th>Kategoria</th>
                         <th>Opcje</th>
@@ -52,6 +61,10 @@
                     {% endfor %}
                     </tbody>
                 </table>
+
+                <div id = "rightSideFormSearch">
+                    {{ knp_pagination_render(referees) }}
+                </div>
 
             </article>
 

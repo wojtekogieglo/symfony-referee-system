@@ -19,13 +19,21 @@
                 <header class="page-header">
                     <h1 class="page-title">Kluby</h1>
                 </header>
+                <div id="rightSideFormSearch">
+                    <form id="search-form" class="pure-form pure-form-stacked">
+                        <fieldset>
+                            <p>  <input type="text" name = "search_name" id = "search_name" placeholder="Nazwa klubu"/></p>
+                            <button href = "/club" type="submit" class="btn btn-default btn-sm">Szukaj</button>
+                        </fieldset>
+                    </form>
+                </div>
 
                 <table id = "tableList" class="table table-striped" >
                     <thead>
                     <tr>
                         <th>Nazwa klubu</th>
-                        <th>Liga &nbsp</th>
-                        <th>Stadion &nbsp</th>
+                        <th>Liga</th>
+                        <th>Stadion</th>
                         <th>Rok założenia</th>
                         <th>Opcje</th>
                     </tr>
@@ -51,6 +59,10 @@
                     </tbody>
                 </table>
 
+                <div id = "rightSideFormSearch">
+                    {{ knp_pagination_render(clubs) }}
+                </div>
+
             </article>
 
         </div>
@@ -61,4 +73,6 @@
 
 {% block javascripts %}
     <script src="/js/delete.js"></script>
+    <script src="/js/functions.js"></script>
+
 {% endblock %}

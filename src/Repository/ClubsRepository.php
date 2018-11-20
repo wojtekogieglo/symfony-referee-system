@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Clubs;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @method Clubs|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,9 +15,12 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class ClubsRepository extends ServiceEntityRepository
 {
-    public function __construct(RegistryInterface $registry)
+    protected $container;
+
+    public function __construct(RegistryInterface $registry, ContainerInterface $container)
     {
         parent::__construct($registry, Clubs::class);
+        $this->container = $container;
     }
 
     // /**
@@ -66,5 +70,28 @@ class ClubsRepository extends ServiceEntityRepository
         );
 
         return $query->execute();
+    }
+
+    public function findAllByClubName($request, $search_clubName){
+        $entityManager = $this->getEntityManager();
+        $container = $this->container;
+
+
+        $club = $entityManager->createQueryBuilder()
+            ->select('c')
+            ->from(Clubs::class, 'c')
+            ->where("c.club_name LIKE :clubName")
+            ->setParameter('clubName',  $search_clubName.'%')
+            ->getQuery()
+            ->getResult();
+
+        $pagenator = $container->get('knp_paginator');
+        $result = $pagenator->paginate(
+            $club,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 5)
+        );
+
+        return $result;
     }
 }

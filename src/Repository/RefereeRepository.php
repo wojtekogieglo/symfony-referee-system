@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Referee;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @method Referee|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,9 +15,11 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class RefereeRepository extends ServiceEntityRepository
 {
-    public function __construct(RegistryInterface $registry)
+    protected $container;
+    public function __construct(RegistryInterface $registry, ContainerInterface $container)
     {
         parent::__construct($registry, Referee::class);
+        $this->container = $container;
     }
 
     // /**
@@ -47,4 +50,27 @@ class RefereeRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAllByRefereeSurname($request, $search_surname){
+        $entityManager = $this->getEntityManager();
+        $container = $this->container;
+
+
+        $club = $entityManager->createQueryBuilder()
+            ->select('r')
+            ->from(Referee::class, 'r')
+            ->where("r.surname LIKE :surname")
+            ->setParameter('surname',  $search_surname.'%')
+            ->getQuery()
+            ->getResult();
+
+        $pagenator = $container->get('knp_paginator');
+        $result = $pagenator->paginate(
+            $club,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 5)
+        );
+
+        return $result;
+    }
 }

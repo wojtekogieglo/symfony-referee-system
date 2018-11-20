@@ -242,7 +242,8 @@ class Games
      */
     public function validate(ExecutionContextInterface $context, $payload)
     {
-        if($this->getClubIdhome() === $this->getClubIdAway())
+
+        if($this->getLeagueId() != null && $this->getClubIdhome() === $this->getClubIdAway())
             $context->buildViolation('Drużyny gospodarzy musi być inna niż drużyna gości!')
                 ->atPath('club_id_home')
                 ->addViolation();

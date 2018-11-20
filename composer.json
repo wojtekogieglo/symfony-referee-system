@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/annotations": "^1.6",
+        "knplabs/knp-paginator-bundle": "^2.8",
         "symfony/console": "*",
         "symfony/flex": "^1.1",
         "symfony/form": "*",
