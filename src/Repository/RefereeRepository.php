@@ -73,4 +73,17 @@ class RefereeRepository extends ServiceEntityRepository
 
         return $result;
     }
+
+    public function findAllByUserId($userId){
+        $entityManager = $this->getEntityManager();
+        $referee = $entityManager->createQueryBuilder()
+            ->select('r')
+            ->from(Referee::class, 'r')
+            ->where("u.id = :userId")
+            ->setParameter('userId',  $userId)
+            ->join('r.user_id', 'u')
+            ->getQuery()
+            ->getOneOrNullResult();
+        return $referee;
+    }
 }

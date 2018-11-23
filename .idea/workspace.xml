@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41129c00-2c70-4847-bc72-d41528e1320c" name="Default Changelist" comment="Added pagination, possibility and remove all exists controllers to /AdminControllers">
-      <change afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20181113122238.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20181113123651.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20181113125919.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/KnpPaginatorBundle.pl.xliff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/refereematch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/refereematch.iml" afterDir="false" />
+    <list default="true" id="41129c00-2c70-4847-bc72-d41528e1320c" name="Default Changelist" comment="Add list game to each referee, generate report by referee and details each game">
+      <change afterPath="$PROJECT_DIR$/src/Controller/UserControllers/ProfileController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/UserControllers/RefereeGameController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/GameDetailsForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/GameReportForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/PasswordForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ProfileForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/games/game_details.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/games/game_report.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profile/change_password.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profile/profile.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ClubController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminControllers/ClubController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminControllers/GameController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LeagueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminControllers/LeagueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminControllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RefereeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminControllers/RefereeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminControllers/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Games.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Games.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20181110225352.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20181110225352.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ClubsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClubsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Referee.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Referee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20181110225352.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/GamesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/GamesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/LeagueRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LeagueRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/RefereeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RefereeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clubs/club_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/club_list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clubs/new_club.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clubs/new_club.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/games/game_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/games/game_list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/leagues/league_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/leagues/league_list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/referees/referee_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/referees/referee_list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,31 +40,35 @@
     <session id="1143410267">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
-          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="2" />
-          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.29" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="11" />
           <entry key="env" value="2" />
+          <entry key="gitignore" value="1" />
           <entry key="htaccess" value="1" />
           <entry key="js" value="22" />
           <entry key="json" value="1" />
           <entry key="lock" value="2" />
-          <entry key="php" value="176" />
+          <entry key="php" value="284" />
           <entry key="png" value="1" />
-          <entry key="twig" value="117" />
+          <entry key="tpl" value="7" />
+          <entry key="twig" value="158" />
           <entry key="xliff" value="1" />
           <entry key="yaml" value="13" />
         </counts>
@@ -80,9 +79,10 @@
           <entry key="Image" value="1" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="22" />
-          <entry key="PHP" value="176" />
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Twig" value="117" />
+          <entry key="PHP" value="284" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Smarty" value="7" />
+          <entry key="Twig" value="158" />
           <entry key="XML" value="1" />
           <entry key="YAML" value="13" />
           <entry key="htaccess" value="1" />
@@ -94,9 +94,10 @@
           <entry key="dummy" value="9" />
           <entry key="env" value="16" />
           <entry key="js" value="876" />
-          <entry key="php" value="11102" />
-          <entry key="twig" value="3459" />
-          <entry key="txt" value="681" />
+          <entry key="php" value="15463" />
+          <entry key="tpl" value="1" />
+          <entry key="twig" value="5073" />
+          <entry key="txt" value="779" />
           <entry key="yaml" value="211" />
         </counts>
       </usages-collector>
@@ -104,10 +105,16 @@
         <counts>
           <entry key="CSS" value="88" />
           <entry key="JavaScript" value="876" />
-          <entry key="PHP" value="11102" />
-          <entry key="PLAIN_TEXT" value="706" />
-          <entry key="Twig" value="3459" />
+          <entry key="PHP" value="15463" />
+          <entry key="PLAIN_TEXT" value="804" />
+          <entry key="Smarty" value="1" />
+          <entry key="Twig" value="5073" />
           <entry key="YAML" value="211" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.php.new.class">
+        <counts>
+          <entry key="PHP Class.type" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -117,15 +124,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/GameController.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/GameDetailsForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#28#68#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/games/game_details.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/inc/navbar.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-              <folding>
-                <element signature="e#50#71#0#PHP" expanded="true" />
-                <element signature="e#193#238#0#PHP" expanded="true" />
-              </folding>
+              <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Repository/RefereeRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="85" column="14" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -149,9 +182,18 @@
       <find>get</find>
       <find>invalid crede</find>
       <find>error</find>
+      <find>new</find>
+      <find>findAllBy</find>
+      <find>g.user</find>
+      <find>refereeGame</find>
+      <find>findAllByUser</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
     <dirStrings>
       <dir>D:\Programy\xampp\htdocs\symphart</dir>
+      <dir>D:\Programy\xampp\htdocs\refereematch\src\Controller\UserControllers</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -160,57 +202,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../symphart/var/cache/dev/translations/catalogue.en.52lf549.php" />
-        <option value="$PROJECT_DIR$/config/packages/security.yaml" />
-        <option value="$PROJECT_DIR$/src/Controller/SecurityController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/MainController.php" />
-        <option value="$PROJECT_DIR$/templates/clubs/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/Form/LeagueForm.php" />
-        <option value="$PROJECT_DIR$/public/js/main.js" />
-        <option value="$PROJECT_DIR$/public/js/main1.js" />
-        <option value="$PROJECT_DIR$/templates/referee/referee_list.html.twig" />
-        <option value="$PROJECT_DIR$/src/Form/RefereeForm.php" />
-        <option value="$PROJECT_DIR$/public/css/main.css" />
-        <option value="$PROJECT_DIR$/src/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/Form/MatchForm.php" />
-        <option value="$PROJECT_DIR$/src/Form/ClubForm.php" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
-        <option value="$PROJECT_DIR$/templates/inc/navbar.html.twig" />
-        <option value="$PROJECT_DIR$/templates/main/index.html.twig" />
-        <option value="$PROJECT_DIR$/config/packages/framework.yaml" />
-        <option value="$PROJECT_DIR$/src/Entity/League.php" />
         <option value="$PROJECT_DIR$/templates/leagues/new_league.html.twig" />
         <option value="$PROJECT_DIR$/templates/games/new_game.html.twig" />
-        <option value="$PROJECT_DIR$/templates/clubs/new_club.html.twig" />
         <option value="$PROJECT_DIR$/templates/referees/new_referee.html.twig" />
         <option value="$PROJECT_DIR$/templates/security/login.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Clubs.php" />
         <option value="$PROJECT_DIR$/src/Form/GamesForm.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Referee.php" />
         <option value="$PROJECT_DIR$/../ESAMATCH/public/js/functions.js" />
         <option value="$PROJECT_DIR$/src/Controller/ClubController.php" />
         <option value="$PROJECT_DIR$/src/Repository/ClubsRepository.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Games.php" />
         <option value="$PROJECT_DIR$/config/packages/knp_paginator.yaml" />
         <option value="$PROJECT_DIR$/translations/KnpPaginatorBundle.pl.xliff" />
         <option value="$PROJECT_DIR$/config/packages/translation.yaml" />
-        <option value="$PROJECT_DIR$/src/Repository/RefereeRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/RefereeController.php" />
         <option value="$PROJECT_DIR$/src/Controller/LeagueController.php" />
         <option value="$PROJECT_DIR$/templates/leagues/league_list.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/LeagueRepository.php" />
-        <option value="$PROJECT_DIR$/templates/games/game_list.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/GameController.php" />
-        <option value="$PROJECT_DIR$/src/Repository/GamesRepository.php" />
         <option value="$PROJECT_DIR$/templates/clubs/club_list.html.twig" />
         <option value="$PROJECT_DIR$/templates/referees/referee_list.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/AdminControllers/ClubController.php" />
         <option value="$PROJECT_DIR$/src/Controller/AdminControllers/LeagueController.php" />
         <option value="$PROJECT_DIR$/src/Controller/AdminControllers/MainController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/AdminControllers/RefereeController.php" />
         <option value="$PROJECT_DIR$/src/Controller/AdminControllers/SecurityController.php" />
         <option value="$PROJECT_DIR$/src/Controller/AdminControllers/GameController.php" />
+        <option value="$PROJECT_DIR$/../ESAMATCH/app/controllers/ProfilEditCtrl.class.php" />
+        <option value="$PROJECT_DIR$/src/Repository/UserRepository.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Referee.php" />
+        <option value="$PROJECT_DIR$/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/templates/profile/profile.html.twig" />
+        <option value="$PROJECT_DIR$/../ESAMATCH/app/views/ChangePasswordView.tpl" />
+        <option value="$PROJECT_DIR$/src/Form/Model/ChangePassword.php" />
+        <option value="$PROJECT_DIR$/src/Form/ChangePasswordType.php" />
+        <option value="$PROJECT_DIR$/src/Form/PasswordForm.php" />
+        <option value="$PROJECT_DIR$/src/Controller/UserControllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/templates/profile/change_password.html.twig" />
+        <option value="$PROJECT_DIR$/templates/clubs/new_club.html.twig" />
+        <option value="$PROJECT_DIR$/src/Repository/RefereeRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/GamesRepository.php" />
+        <option value="$PROJECT_DIR$/src/Form/ProfileForm.php" />
+        <option value="$PROJECT_DIR$/var/cache/dev/twig/ce/ce7e3e9b2d3c64d7f258267a076391ac51d484a1fa20d0902dfe5b5ea854b913.php" />
+        <option value="$PROJECT_DIR$/templates/inc/navbar.html.twig" />
+        <option value="$PROJECT_DIR$/templates/games/game_list.html.twig" />
+        <option value="$PROJECT_DIR$/src/Form/GameReportForm.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Games.php" />
+        <option value="$PROJECT_DIR$/src/Controller/UserControllers/RefereeGameController.php" />
+        <option value="$PROJECT_DIR$/templates/games/game_details.html.twig" />
+        <option value="$PROJECT_DIR$/templates/games/game_report.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/AdminControllers/RefereeController.php" />
+        <option value="$PROJECT_DIR$/templates/main/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Form/GameDetailsForm.php" />
       </list>
     </option>
   </component>
@@ -315,6 +357,17 @@
               <item name="refereematch" type="b2602c69:ProjectViewProjectNode" />
               <item name="refereematch" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="refereematch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="refereematch" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="refereematch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="refereematch" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -326,6 +379,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ESAMATCH" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -372,7 +426,12 @@
       <workItem from="1542489092248" duration="17026000" />
       <workItem from="1542567674500" duration="24689000" />
       <workItem from="1542701036220" duration="30000" />
-      <workItem from="1542730825700" duration="6518000" />
+      <workItem from="1542730825700" duration="9433000" />
+      <workItem from="1542792765996" duration="20543000" />
+      <workItem from="1542879479452" duration="4823000" />
+      <workItem from="1542903108113" duration="602000" />
+      <workItem from="1542923350471" duration="3807000" />
+      <workItem from="1542973382417" duration="3517000" />
     </task>
     <task id="LOCAL-00001" summary="Add login option and create admin user with UserFixtures">
       <created>1541959319379</created>
@@ -423,26 +482,41 @@
       <option name="project" value="LOCAL" />
       <updated>1542647775755</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added pagination, possibility and remove all exists controllers to /AdminControllers">
+      <created>1542737855504</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1542737855505</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109802000" />
+    <option name="totallyTimeSpent" value="146009000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.27231467" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967213" weight="0.27987897" />
       <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.2647504" />
-      <window_info id="Favorites" order="2" sideWeight="0.50163937" side_tool="true" weight="0.2677761" />
+      <window_info id="Favorites" order="2" sideWeight="0.5032787" side_tool="true" weight="0.27609682" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.4262295" />
@@ -455,16 +529,16 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.2753404" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4967213" visible="true" weight="0.27609682" />
       <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.2647504" />
-      <window_info id="Favorites" order="2" sideWeight="0.50163937" side_tool="true" weight="0.2677761" />
+      <window_info id="Favorites" order="2" sideWeight="0.5032787" side_tool="true" weight="0.27609682" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.4262295" />
@@ -528,318 +602,14 @@
     <MESSAGE value="Update GameController" />
     <MESSAGE value="Add validations as a annotations in entities" />
     <MESSAGE value="Added pagination, possibility and remove all exists controllers to /AdminControllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pagination, possibility and remove all exists controllers to /AdminControllers" />
+    <MESSAGE value="Add list game to each referee, generate report by referee and details each game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add list game to each referee, generate report by referee and details each game" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap-theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/UserFixtures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="27" column="45" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../symphart/src/Controller/RegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="15" column="92" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/template.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/RefereeForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="19" selection-start-line="25" selection-start-column="12" selection-end-line="31" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/LeagueForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-527">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/ClubForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/framework-bundle/Controller/ControllerTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="330" column="23" selection-start-line="330" selection-start-column="23" selection-end-line="330" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/routing.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js" />
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-951">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="69" column="54" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/games/new_game.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/clubs/new_club.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/leagues/new_league.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/referees/new_referee.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-611">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/League.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/GamesForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Referee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
-          <caret line="148" column="5" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ESAMATCH/public/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Clubs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/translations/KnpPaginatorBundle.pl.xliff">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/knp_paginator.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="76" selection-start-line="11" selection-start-column="76" selection-end-line="11" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Games.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="244" selection-start-line="244" selection-end-line="244" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/RefereeRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="74" column="5" lean-forward="true" selection-start-line="53" selection-start-column="4" selection-end-line="74" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/LeagueRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="74" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ClubsRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" selection-start-line="22" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/ClubController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" selection-start-line="21" selection-end-line="22" />
-          <folding>
-            <element signature="e#33#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/clubs/club_list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/games/game_list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/leagues/league_list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/referees/referee_list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/GamesRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/inc/navbar.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/ClubController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="2" />
-          <folding>
-            <element signature="e#33#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/LeagueController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -850,16 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/RefereeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#33#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/SecurityController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -867,14 +627,309 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/GameController.php">
+    <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/ClubController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="91" column="19" lean-forward="true" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/leagues/league_list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/controllers/MatchListCtrl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3039" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/controllers/RefereeListCtrl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1734" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/forms/ProfilEditForm.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/RefereeForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="34" column="34" selection-end-line="54" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/views/InformationProfilView.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-863" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/referees/new_referee.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-end-line="92" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/controllers/ProfilEditCtrl.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1632" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="118" column="41" selection-start-line="118" selection-start-column="41" selection-end-line="118" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/transfer/User.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Referee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="149" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/views/ChangePasswordView.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/profile.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="52" column="44" selection-end-line="74" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/Model/ChangePassword.php" />
+    <entry file="file://$PROJECT_DIR$/src/Form/ChangePasswordType.php" />
+    <entry file="file://$PROJECT_DIR$/src/Form/ClubForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/change_password.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/PasswordForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/UserControllers/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ClubsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/views/MatchListTable.tpl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/views/MatchListTableReferee.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="24" column="103" lean-forward="true" selection-start-line="24" selection-start-column="103" selection-end-line="24" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/GamesRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-101">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/ProfileForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="37" column="25" lean-forward="true" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/LeagueController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="67" column="62" lean-forward="true" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/views/RaportMatchView.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="63" column="63" lean-forward="true" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/views/InformationMatchView.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/var/cache/dev/twig/ce/ce7e3e9b2d3c64d7f258267a076391ac51d484a1fa20d0902dfe5b5ea854b913.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="57" column="68" lean-forward="true" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/GameController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="89" column="5" selection-start-line="63" selection-start-column="4" selection-end-line="89" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/games/new_game.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="64" column="30" lean-forward="true" selection-start-line="59" selection-start-column="24" selection-end-line="64" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/GamesForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="72" column="12" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="75" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Games.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Clubs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="57" column="8" selection-start-line="50" selection-start-column="5" selection-end-line="57" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/GameReportForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
           <folding>
-            <element signature="e#50#71#0#PHP" expanded="true" />
-            <element signature="e#193#238#0#PHP" expanded="true" />
+            <element signature="e#28#68#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/UserControllers/RefereeGameController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="64" column="60" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ESAMATCH/app/controllers/RefereeCtrl.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdminControllers/RefereeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/clubs/new_club.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/games/game_report.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/games/game_list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="74" column="75" selection-start-line="74" selection-start-column="75" selection-end-line="74" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/GameDetailsForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#28#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/games/game_details.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/inc/navbar.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/RefereeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="85" column="14" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
         </state>
       </provider>
     </entry>

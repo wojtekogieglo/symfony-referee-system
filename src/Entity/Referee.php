@@ -21,7 +21,7 @@ class Referee
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
-     *      min = 5,
+     *      min = 3,
      *      max = 255,
      *      minMessage = "Imię musi składać się z przynajmniej {{ limit }} znaków",
      *      maxMessage = "Imię nie może być dłuższe niż {{ limit }} znaków"
@@ -32,7 +32,7 @@ class Referee
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
-     *      min = 5,
+     *      min = 3,
      *      max = 255,
      *      minMessage = "Nazwisko musi składać się przynajmniej z {{ limit }} znaków",
      *      maxMessage = "Nazwisko nie może być dłuższe niż {{ limit }} znaków"
@@ -144,8 +144,8 @@ class Referee
         return $this;
     }
 
-    public function __toString() {
-        return (string) $this->getName()." ".(string) $this->getSurname();
+    public function __toString()
+    {
+        return (string)$this->getName() . " " . (string)$this->getSurname();
     }
-
 }

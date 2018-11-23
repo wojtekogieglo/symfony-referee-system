@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+{% endblock %}
+
+{% block body %}
+
+    <header id="head" class="secondary"></header>
+
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/referee_game">Spotkania</a></li>
+            <li class="active">Szczegóły meczu</li>
+        </ol>
+        <article class="col-xs-12">
+            <header class="page-header">
+                <h1 class="page-title">Szczegóły meczu</h1>
+            </header>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="thin text-center">Szczegóły meczu</h3>
+                        <hr>
+                        <div class="col-md-6">
+                            {{ form_start(form) }}
+                            <div class="form-group">
+                                {{ form_label(form.league_id) }}
+                                {{ form_widget(form.league_id) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.club_id_home) }}
+                                {{ form_widget(form.club_id_home) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.referee_id) }}
+                                {{ form_widget(form.referee_id) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.season) }}
+                                {{ form_widget(form.season) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.yellow_cards) }}
+                                {{ form_widget(form.yellow_cards) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.match_day) }}
+                                {{ form_widget(form.match_day) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form_label(form.date) }}
+                                {{ form_widget(form.date) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.club_id_away) }}
+                                {{ form_widget(form.club_id_away) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.score) }}
+                                {{ form_widget(form.score) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.round) }}
+                                {{ form_widget(form.round) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.red_cards) }}
+                                {{ form_widget(form.red_cards) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_label(form.penalties) }}
+                                {{ form_widget(form.penalties) }}
+                            </div>
+                        </div>
+                        <br>
+                        {{ form_end(form) }}
+
+                    </div>
+                </div>
+        </article>
+    </div>
+    <div class="top-space"></div>
+
+{% endblock %}

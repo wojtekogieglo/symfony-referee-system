@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Games;
+use App\Entity\Referee;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -60,6 +61,42 @@ class GamesRepository extends ServiceEntityRepository
             ->select('g')
             ->from(Games::class, 'g')
             ->where("gl.league_name LIKE :leagueName")
+            ->setParameter('leagueName',  $search_leagueName.'%')
+            ->join('g.league_id', 'gl')
+            ->orderBy('g.match_day', 'ASC')
+            ->getQuery()
+            ->getResult();
+
+        $pagenator = $container->get('knp_paginator');
+        $result = $pagenator->paginate(
+            $club,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 5)
+        );
+
+        return $result;
+    }
+
+    public function findAllByLeagueNameReferee($request, $search_leagueName, $userId){
+        $entityManager = $this->getEntityManager();
+        $container = $this->container;
+
+        $referee = $entityManager->createQueryBuilder()
+            ->select('r')
+            ->from(Referee::class, 'r')
+            ->where('r.user_id = :userId')
+            ->setParameter('userId', $userId)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+        $refereeId = $referee->getId();
+
+        $club = $entityManager->createQueryBuilder()
+            ->select('g')
+            ->from(Games::class, 'g')
+            ->where("gl.league_name LIKE :leagueName")
+            ->andWhere('g.referee_id = :refereeId')
+            ->setParameter('refereeId', $refereeId)
             ->setParameter('leagueName',  $search_leagueName.'%')
             ->join('g.league_id', 'gl')
             ->orderBy('g.match_day', 'ASC')

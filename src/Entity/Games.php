@@ -81,6 +81,10 @@ class Games
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\LessThanOrEqual(
+     *     value = 22,
+     *     message="Nie może być więcej niż 22 czerwone kartki w meczu"
+     * )
      */
     private $red_cards;
 

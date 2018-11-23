@@ -12,6 +12,7 @@
         "symfony/form": "*",
         "symfony/framework-bundle": "*",
         "symfony/maker-bundle": "^1.9",
+        "symfony/options-resolver": "*",
         "symfony/orm-pack": "^1.0",
         "symfony/security-bundle": "*",
         "symfony/twig-bundle": "*",
