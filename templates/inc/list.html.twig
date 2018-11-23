@@ -1,0 +1,17 @@
+<header id="head" class="secondary"></header>
+
+<div class="container">
+
+    {% block list %} {% endblock %}
+
+    <div class="row">
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">{% block list_title %} {% endblock %}</h1>
+            </header>
+            {% block search_form %} {% endblock %}
+            {% block table %} {% endblock %}
+        </article>
+
+    </div>
+</div>

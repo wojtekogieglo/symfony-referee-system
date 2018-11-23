@@ -5,68 +5,65 @@
 {% endblock %}
 
 {% block body %}
-
-    <header id="head" class="secondary"></header>
-
-    <div class="container">
-
-        <ol class="breadcrumb">
-            <li><a href="/">Home</a></li>
-            <li><a href="/referee_game">Spotkania</a></li>
-            <li class="active">Raport meczowy</li>
-        </ol>
-        <article class="col-xs-12">
-            <header class="page-header">
-                <h1 class="page-title">Raport meczowy</h1>
-            </header>
-            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h3 class="thin text-center">Raport meczowy</h3>
-                        <hr>
-                        {{ form_start(form) }}
-                        <div class="form-group">
-                            {{ form_label(form.league_id) }}
-                            {{ form_widget(form.league_id) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.club_id_home) }}
-                            {{ form_widget(form.club_id_home) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.club_id_away) }}
-                            {{ form_widget(form.club_id_away) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.score) }}
-                            {{ form_widget(form.score) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.yellow_cards) }}
-                            {{ form_widget(form.yellow_cards) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.red_cards) }}
-                            {{ form_widget(form.red_cards) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.penalties) }}
-                            {{ form_widget(form.penalties) }}
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-lg-12 text-right">
-                                {{ form_label(form.save) }}
-                                {{ form_widget(form.save) }}
-                            </div>
-                        </div>
-                        {{ form_end(form) }}
-
-                    </div>
+    {% embed 'inc/new.html.twig'%}
+        {% block list %}
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/referee_game">Spotkania</a></li>
+                <li class="active">Raport meczowy</li>
+            </ol>
+        {% endblock %}
+        {% block page_title %} Dodaj mecz {% endblock %}
+        {% block form_title %} Dodaj mecz {% endblock %}
+        {% block form %}
+            {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_label(form.league_id) }}
+                {{ form_widget(form.league_id) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.club_id_home) }}
+                {{ form_widget(form.club_id_home) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.club_id_away) }}
+                {{ form_widget(form.club_id_away) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.score) }}
+                {{ form_widget(form.score) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.yellow_cards) }}
+                {{ form_widget(form.yellow_cards) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.red_cards) }}
+                {{ form_widget(form.red_cards) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.penalties) }}
+                {{ form_widget(form.penalties) }}
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12 text-right">
+                    {{ form_label(form.save) }}
+                    {{ form_widget(form.save) }}
                 </div>
             </div>
-        </article>
-    </div>
-    <div class="top-space"></div>
+            {{ form_end(form) }}
 
+            {% if errors|length %}
+                <br>
+                <div class="alert alert-danger">
+                    <ul>
+                        {% for error in errors %}
+                            <li>{{ error.message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endblock %}
+    {% endembed %}
 {% endblock %}

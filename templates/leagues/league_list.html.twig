@@ -1,69 +1,57 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-    <header id="head" class="secondary"></header>
-
-    <div class="container">
-
-        <ol class="breadcrumb">
-            <li><a href="/">Home</a></li>
-            <li class="active">Ligi</li>
-        </ol>
-
-        <div class="row">
-
-            <!-- Article main content -->
-            <article class="col-xs-12 maincontent">
-                <header class="page-header">
-                    <h1 class="page-title">Ligi</h1>
-                </header>
-                <div id="rightSideFormSearch">
-                    <form id="search-form" class="pure-form pure-form-stacked">
-                        <fieldset>
-                            <p>  <input type="text" name = "search_leagueName" id = "search_leagueName" placeholder="Nazwa ligi"/></p>
-                            <button href = "/league" type="submit" class="btn btn-default btn-sm">Szukaj</button>
-                        </fieldset>
-                    </form>
-                </div>
-
-                <table id = "tableList" class="table table-striped" >
-                    <thead>
+    {% embed 'inc/list.html.twig'%}
+        {% block list %}
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Ligi</li>
+            </ol>
+        {% endblock %}
+        {% block list_title %} Ligi {% endblock %}
+        {% block search_form %}
+            <div id="rightSideFormSearch">
+                <form id="search-form" class="pure-form pure-form-stacked">
+                    <fieldset>
+                        <p>  <input type="text" name = "search_leagueName" id = "search_leagueName" placeholder="Nazwa ligi"/></p>
+                        <button href = "/league" type="submit" class="btn btn-default btn-sm">Szukaj</button>
+                    </fieldset>
+                </form>
+            </div>
+        {% endblock %}
+        {% block table %}
+            <table id = "tableList" class="table table-striped" >
+                <thead>
+                <tr>
+                    <th>Nazwa ligi</th>
+                    <th>Opcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for league in leagues %}
                     <tr>
-                        <th>Nazwa ligi</th>
-                        <th>Opcje</th>
+                        <td>{{ league.leagueName }}</td>
+                        <div class="text-right">
+                            <td>
+                                <a href = "/league/edit/{{ league.id }}"
+                                   class="btn btn-default btn-xs"
+                                   role="button">Edytuj</a>&nbsp&nbsp
+                                <a href="#"
+                                   class="btn btn-danger btn-xs delete"
+                                   data-type="league"
+                                   data-id="{{ league.id }}">Usuń</a>
+                            </td>
+                        </div>
                     </tr>
-                    </thead>
-                    <tbody>
-                    {% for league in leagues %}
-                        <tr>
-                            <td>{{ league.leagueName }}</td>
-                            <div class="text-right">
-                                <td>
-                                    <a href = "/league/edit/{{ league.id }}"
-                                       class="btn btn-default btn-xs"
-                                       role="button">Edytuj</a>&nbsp&nbsp
-                                    <a href="#"
-                                       class="btn btn-danger btn-xs delete"
-                                       data-type="league"
-                                       data-id="{{ league.id }}">Usuń</a>
-                                </td>
-                            </div>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+                {% endfor %}
+                </tbody>
+            </table>
 
-                <div id = "rightSideFormSearch">
-                    {{ knp_pagination_render(leagues) }}
-                </div>
-
-            </article>
-
-        </div>
-    </div>
-    <div class="top-space"></div>
-
+            <div id = "rightSideFormSearch">
+                {{ knp_pagination_render(leagues) }}
+            </div>
+        {% endblock %}
+    {% endembed %}
 {% endblock %}
 
 {% block javascripts %}

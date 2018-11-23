@@ -6,76 +6,61 @@
 
 
 {% block body %}
-
-    <header id="head" class="secondary"></header>
-
-    <div class="container">
-
-        <ol class="breadcrumb">
-            <li><a href="/">Home</a></li>
-            <li class="active">Dodaj sędziego</li>
-        </ol>
-        <article class="col-xs-12">
-            <header class="page-header">
-                <h1 class="page-title">Dodaj sędziego</h1>
-            </header>
-            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h3 class="thin text-center">Dodaj sędziego</h3>
-                        <hr>
-                        {{ form_start(form) }}
-                        <div class="form-group">
-                            {{ form_label(form.name) }}
-                            {{ form_widget(form.name) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.surname) }}
-                            {{ form_widget(form.surname) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.email) }}
-                            {{ form_widget(form.email) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.birthdate) }}
-                            {{ form_widget(form.birthdate) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.wydzial_sedziowski) }}
-                            {{ form_widget(form.wydzial_sedziowski) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_label(form.level) }}
-                            {{ form_widget(form.level) }}
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-lg-12 text-right">
-                                {{ form_label(form.save) }}
-                                {{ form_widget(form.save) }}
-                            </div>
-                        </div>
-                        {{ form_end(form) }}
-
-                        {% if errors|length %}
-                            <br>
-                            <div class="alert alert-danger">
-                                <ul>
-                                    {% for error in errors %}
-                                        <li>{{ error.message }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        {% endif %}
-
-                    </div>
+    {% embed 'inc/new.html.twig'%}
+        {% block list %}
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Dodaj sędziego</li>
+            </ol>
+        {% endblock %}
+        {% block page_title %} Dodaj sędziego {% endblock %}
+        {% block form %}
+            {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.surname) }}
+                {{ form_widget(form.surname) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.birthdate) }}
+                {{ form_widget(form.birthdate) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.wydzial_sedziowski) }}
+                {{ form_widget(form.wydzial_sedziowski) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.level) }}
+                {{ form_widget(form.level) }}
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12 text-right">
+                    {{ form_label(form.save) }}
+                    {{ form_widget(form.save) }}
                 </div>
             </div>
-        </article>
-    </div>
-    <div class="top-space"></div>
+            {{ form_end(form) }}
 
+            {% if errors|length %}
+                <br>
+                <div class="alert alert-danger">
+                    <ul>
+                        {% for error in errors %}
+                            <li>{{ error.message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endblock %}
+    {% endembed %}
 {% endblock %}
 
 {% block javascripts %}

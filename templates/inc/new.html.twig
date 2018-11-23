@@ -1,0 +1,22 @@
+<header id="head" class="secondary"></header>
+
+<div class="container">
+    {% block list %} {% endblock %}
+
+    <article class="col-xs-12">
+        <header class="page-header">
+            <h1 class="page-title">{% block page_title %} Page title {% endblock %}</h1>
+        </header>
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="thin text-center">{{ block('page_title') }}</h3>
+                    <hr>
+                    {% block form %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
