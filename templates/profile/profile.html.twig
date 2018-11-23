@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+{% endblock %}
+
+
+{% block body %}
+    {% embed 'inc/new.html.twig'%}
+        {% block list %}
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Profil</li>
+            </ol>
+        {% endblock %}
+        {% block page_title %} Informacje o profilu {% endblock %}
+        {% block form %}
+            {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.surname) }}
+                {{ form_widget(form.surname) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.user_id) }}
+                {{ form_widget(form.user_id) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.birthdate) }}
+                {{ form_widget(form.birthdate) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.wydzial_sedziowski) }}
+                {{ form_widget(form.wydzial_sedziowski) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.level) }}
+                {{ form_widget(form.level) }}
+            </div>
+            <br>
+            {{ form_end(form) }}
+        {% endblock %}
+    {% endembed %}
+    <div class="top-space"></div>
+
+{% endblock %}
