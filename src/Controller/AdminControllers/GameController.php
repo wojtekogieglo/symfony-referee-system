@@ -52,6 +52,11 @@ class GameController extends AbstractController
             $entityManager->persist($game);
             $entityManager->flush();
 
+            $this->addFlash(
+                'info',
+                'Dodano nowe spotkanie'
+            );
+
             return $this->redirectToRoute('game_list');
         }
 
@@ -80,6 +85,11 @@ class GameController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
 
+            $this->addFlash(
+                'info',
+                'Pomyślnie edytowano rekord'
+            );
+
             return $this->redirectToRoute('game_list');
         }
 
@@ -100,6 +110,11 @@ class GameController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($game);
         $entityManager->flush();
+
+        $this->addFlash(
+            'info',
+            'Spotkanie zostało usunięte'
+        );
 
         $response = new Response();
         $response->send();

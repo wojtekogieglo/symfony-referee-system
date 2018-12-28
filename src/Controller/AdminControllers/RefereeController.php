@@ -59,6 +59,11 @@ class RefereeController extends AbstractController
             $entityManager->persist($referee);
             $entityManager->flush();
 
+            $this->addFlash(
+                'info',
+                'Dodano nowego sędziego'
+            );
+
             return $this->redirectToRoute('referee_list');
         }
 
@@ -90,6 +95,11 @@ class RefereeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
 
+            $this->addFlash(
+                'info',
+                'Pomyślnie edytowano rekord'
+            );
+
             return $this->redirectToRoute('referee_list');
         }
 
@@ -111,6 +121,11 @@ class RefereeController extends AbstractController
         $entityManager->remove($referee);
         $entityManager->remove($user);
         $entityManager->flush();
+
+        $this->addFlash(
+            'info',
+            'Sędzia został usunięty'
+        );
 
         $response = new Response();
         $response->send();

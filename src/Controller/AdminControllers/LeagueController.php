@@ -48,6 +48,11 @@ class LeagueController extends AbstractController
             $entityManager->persist($league);
             $entityManager->flush();
 
+            $this->addFlash(
+                'info',
+                'Dodano nową ligę'
+            );
+
             return $this->redirectToRoute('league_list');
         }
 
@@ -75,6 +80,11 @@ class LeagueController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
 
+            $this->addFlash(
+                'info',
+                'Pomyślnie edytowano rekord'
+            );
+
             return $this->redirectToRoute('league_list');
         }
 
@@ -95,6 +105,11 @@ class LeagueController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($league);
         $entityManager->flush();
+
+        $this->addFlash(
+            'info',
+            'Liga została usunięta'
+        );
 
         $response = new Response();
         $response->send();

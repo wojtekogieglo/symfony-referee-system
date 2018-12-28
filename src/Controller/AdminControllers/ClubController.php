@@ -47,6 +47,11 @@ class ClubController extends AbstractController
             $entityManager->persist($club);
             $entityManager->flush();
 
+            $this->addFlash(
+                'info',
+                'Dodano nowy klub'
+            );
+
             return $this->redirectToRoute('club_list');
         }
 
@@ -76,6 +81,11 @@ class ClubController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
 
+            $this->addFlash(
+                'info',
+                'Pomyślnie edytowano rekord'
+            );
+
             return $this->redirectToRoute('club_list');
         }
 
@@ -96,6 +106,11 @@ class ClubController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($club);
         $entityManager->flush();
+
+        $this->addFlash(
+            'info',
+            'Klub został usunięty'
+        );
 
         $response = new Response();
         $response->send();

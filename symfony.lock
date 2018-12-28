@@ -200,6 +200,9 @@
     "symfony/polyfill-php72": {
         "version": "v1.10.0"
     },
+    "symfony/polyfill-php73": {
+        "version": "v1.10.0"
+    },
     "symfony/profiler-pack": {
         "version": "v1.0.3"
     },

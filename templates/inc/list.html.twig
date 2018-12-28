@@ -5,6 +5,14 @@
     {% block list %} {% endblock %}
 
     <div class="row">
+        {% for message in app.flashes('info') %}
+            <div class="alert alert-success">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
         <article class="col-xs-12 maincontent">
             <header class="page-header">
                 <h1 class="page-title">{% block list_title %} {% endblock %}</h1>
