@@ -24,11 +24,11 @@
             <table id = "tableList" class="table table-striped" >
                 <thead>
                 <tr>
-                    <th>Imię</th>
-                    <th>Nazwisko</th>
-                    <th>Data urodzenia</th>
-                    <th>Wydział sędziowski</th>
-                    <th>Kategoria</th>
+                    <th>{{ knp_pagination_sortable(referees, 'Imię', 'name') }}</th>
+                    <th>{{ knp_pagination_sortable(referees, 'Nazwisko', 'surname') }}</th>
+                    <th>{{ knp_pagination_sortable(referees, 'Data urodzenia', 'birthdate') }}</th>
+                    <th>{{ knp_pagination_sortable(referees, 'Wydział sędziowski', 'wydzialsedziowski') }}</th>
+                    <th>{{ knp_pagination_sortable(referees, 'Kategoria', 'level') }}</th>
                     <th>Opcje</th>
                 </tr>
                 </thead>

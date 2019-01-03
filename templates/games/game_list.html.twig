@@ -26,23 +26,23 @@
             </div>
         {% endblock %}
         {% block table %}
-            <table id = "tableList" class="table table-striped table-condensed" >
+            <table id = "tableList" class="table table-condensed" >
                 <thead>
                 <tr>
-                    <th>Liga</th>
-                    <th>Drużyna gospodarzy</th>
-                    <th>Drużyna gości</th>
-                    <th>Sędzia</th>
-                    <th>Data</th>
-                    <th>Sezon</th>
-                    <th>Kolejka</th>
-                    <th>Runda</th>
+                    <th>{{ knp_pagination_sortable(games, 'Liga', 'leagueId.league_name') }}</th>
+                    <th>{{ knp_pagination_sortable(games, 'Drużyna gospodarzy', 'clubIdHome.club_name') }}</th>
+                    <th>{{ knp_pagination_sortable(games, 'Drużyna gości', 'clubIdAway.club_name') }}</th>
+                    <th>{{ knp_pagination_sortable(games, 'Sędzia', 'refereeId.surname') }}</th>
+                    <th>{{ knp_pagination_sortable(games, 'Data', 'date') }}</th>
+                    <th>{{ knp_pagination_sortable(games, 'Sezon', 'season') }}</th>
+                    <th>{{ knp_pagination_sortable(games, 'Kolejka', 'matchDay') }}</th>
+                    <th>{{ knp_pagination_sortable(games, 'Runda', 'round') }}</th>
                     <th>Opcje</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for game in games %}
-                    <tr>
+                    <tr {% if not game.confirmed %} class="danger" {% endif %}>
                         <td>{{ game.leagueId }}</td>
                         <td>{{ game.clubIdHome }}</td>
                         <td>{{ game.clubIdAway }}</td>
@@ -62,12 +62,20 @@
                                    data-id="{{ game.id }}">Usuń</a>
                             {% elseif is_granted('ROLE_REFEREE') %}
                                 <a href = "/referee_game/details/{{ game.id }}"
-                                   class="btn btn-success btn-xs"
+                                   class="btn btn-default btn-xs"
                                    role="button">Szczegóły</a>&nbsp&nbsp
-                                <a href="referee_game/report/{{ game.id }}"
-                                   class="btn btn-primary btn-xs"
-                                   data-type = "game"
-                                   data-id="{{ game.id }}">Raport</a>
+                                {% if not game.confirmed %}
+                                    <a href="referee_game/confirm/{{ game.id }}"
+                                       class="btn btn-success btn-xs"
+                                       data-type = "game"
+                                       data-id="{{ game.id }}">Akceptuj</a>
+                                {% endif %}
+                                {% if date() > date(game.date) %}
+                                    <a href="referee_game/report/{{ game.id }}"
+                                       class="btn btn-primary btn-xs"
+                                       data-type = "game"
+                                       data-id="{{ game.id }}">Raport</a>
+                                {% endif %}
                             {% endif %}
                         </td>
                     </tr>

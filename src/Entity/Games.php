@@ -93,6 +93,11 @@ class Games
      */
     private $penalties;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $confirmed;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -251,5 +256,17 @@ class Games
             $context->buildViolation('Drużyny gospodarzy musi być inna niż drużyna gości!')
                 ->atPath('club_id_home')
                 ->addViolation();
+    }
+
+    public function getConfirmed(): ?bool
+    {
+        return $this->confirmed;
+    }
+
+    public function setConfirmed(bool $confirmed): self
+    {
+        $this->confirmed = $confirmed;
+
+        return $this;
     }
 }

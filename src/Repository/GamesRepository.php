@@ -63,7 +63,7 @@ class GamesRepository extends ServiceEntityRepository
             ->where("gl.league_name LIKE :leagueName")
             ->setParameter('leagueName',  $search_leagueName.'%')
             ->join('g.league_id', 'gl')
-            ->orderBy('g.match_day', 'ASC')
+            ->orderBy('g.date', 'DESC')
             ->getQuery()
             ->getResult();
 
@@ -99,7 +99,7 @@ class GamesRepository extends ServiceEntityRepository
             ->setParameter('refereeId', $refereeId)
             ->setParameter('leagueName',  $search_leagueName.'%')
             ->join('g.league_id', 'gl')
-            ->orderBy('g.match_day', 'ASC')
+            ->orderBy('g.date', 'DESC')
             ->getQuery()
             ->getResult();
 

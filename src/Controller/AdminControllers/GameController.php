@@ -47,6 +47,7 @@ class GameController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $game = $form->getData();
+            $game->setConfirmed(false);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($game);

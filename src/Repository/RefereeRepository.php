@@ -22,35 +22,6 @@ class RefereeRepository extends ServiceEntityRepository
         $this->container = $container;
     }
 
-    // /**
-    //  * @return Referee[] Returns an array of Referee objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Referee
-    {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
-
     public function findAllByRefereeSurname($request, $search_surname){
         $entityManager = $this->getEntityManager();
         $container = $this->container;

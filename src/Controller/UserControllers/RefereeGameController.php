@@ -62,6 +62,11 @@ class RefereeGameController extends AbstractController{
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
 
+            $this->addFlash(
+                'info',
+                'Raport został zatwierdzony'
+            );
+
             return $this->redirectToRoute('referee_game_list');
         }
 
@@ -69,6 +74,26 @@ class RefereeGameController extends AbstractController{
             'form' => $form->createView(),
             'errors' => $errors
         ));
+    }
+
+    /**
+     * @Route("/referee_game/confirm/{id}", name="referee_confirm_game")
+     * Method({"GET", "POST"})
+     */
+    public function confirm(Request $request, $id, ValidatorInterface $validator){
+        $this->denyAccessUnlessGranted('ROLE_REFEREE');
+        $game = $this->getDoctrine()->getRepository(Games::class)->find($id);
+
+        $game->setConfirmed(true);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->flush();
+
+        $this->addFlash(
+            'info',
+            'Mecz został potwierdzony'
+        );
+
+        return $this->redirectToRoute('referee_game_list');
     }
 
 

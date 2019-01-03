@@ -24,10 +24,10 @@
             <table id = "tableList" class="table table-striped" >
                 <thead>
                 <tr>
-                    <th>Nazwa klubu</th>
-                    <th>Liga</th>
-                    <th>Stadion</th>
-                    <th>Rok założenia</th>
+                    <th>{{ knp_pagination_sortable(clubs, 'Nazwa klubu', 'clubName') }}</th>
+                    <th>{{ knp_pagination_sortable(clubs, 'Liga', 'leagueId.leagueName') }}</th>
+                    <th>{{ knp_pagination_sortable(clubs, 'Stadion', 'stadium') }}</th>
+                    <th>{{ knp_pagination_sortable(clubs, 'Rok założenia', 'foundedYear') }}</th>
                     <th>Opcje</th>
                 </tr>
                 </thead>
