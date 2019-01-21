@@ -36,7 +36,7 @@
                     <th>{{ knp_pagination_sortable(games, 'Data', 'date') }}</th>
                     <th>{{ knp_pagination_sortable(games, 'Sezon', 'season') }}</th>
                     <th>{{ knp_pagination_sortable(games, 'Kolejka', 'matchDay') }}</th>
-                    <th>{{ knp_pagination_sortable(games, 'Runda', 'round') }}</th>
+                    <th>Potwierdzony</th>
                     <th>Opcje</th>
                 </tr>
                 </thead>
@@ -50,7 +50,13 @@
                         <td>{{ game.date|date("d.m.Y") }}</td>
                         <td>{{ game.season }}</td>
                         <td>{{ game.matchDay }}</td>
-                        <td>{{ game.round }}</td>
+                        <td>
+                            {% if game.confirmed %}
+                                <i class="fa fa-check"></i>
+                            {% else %}
+                                <i class="fa fa-times"></i>
+                            {% endif %}
+                        </td>
                         <td>
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a href = "/game/edit/{{ game.id }}"

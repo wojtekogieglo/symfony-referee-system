@@ -46,10 +46,12 @@ class RefereeController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $referee = $form->getData();
+            $firstLetterName = strtolower(substr($referee->getName(), 0, 1));
+            $password = strtolower($firstLetterName.$referee->getSurname());
             $user->setEmail($form["email"]->getData());
             $user->setPassword($passwordEncoder->encodePassword(
                 $user,
-                'user'
+                $password
             ));
             $user->setRoles(array('ROLE_REFEREE'));
 

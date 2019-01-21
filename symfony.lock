@@ -1,4 +1,7 @@
 {
+    "cmen/google-charts-bundle": {
+        "version": "3.0.2"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -203,6 +206,9 @@
     "symfony/polyfill-php73": {
         "version": "v1.10.0"
     },
+    "symfony/process": {
+        "version": "v4.1.10"
+    },
     "symfony/profiler-pack": {
         "version": "v1.0.3"
     },
@@ -273,6 +279,15 @@
             "branch": "master",
             "version": "3.3",
             "ref": "6bdfa1a95f6b2e677ab985cd1af2eae35d62e0f6"
+        }
+    },
+    "symfony/web-server-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "dae9b39fd6717970be7601101ce5aa960bf53d9a"
         }
     },
     "symfony/yaml": {
