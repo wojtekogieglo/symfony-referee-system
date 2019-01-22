@@ -78,6 +78,17 @@ password: admin
 
 # Jak używać?
 
+* [Logowanie](#logowanie-1)
+* [Dodawanie ligi](#dodawanie-ligi)
+* [Dodawanie klubu](#dodawanie-klubu)
+* [Dodawanie sędziego](#dodawanie-sędziego)
+* [Dodawanie meczu](#dodawanie-meczu)
+* [Szczegóły meczu](#szczegóły-meczu)
+* [Raport](#raport)
+* [Informacje o profilu](#informacje-o-profilu)
+* [Statystyki](#statystyki-1)
+* [Zmiana hasła](#zmiana-hasła)
+
 ## Logowanie
 
 Użytkownik loguje się poprzez podanie adresu e-mail oraz hasła. Jeżeli dane są nieprawidłowe wyświetla się komunikat o błędzie.
@@ -137,6 +148,8 @@ Użytkownik systemu ma możliwość wyświetlenia wszystkich szczegółowych inf
 ## Raport
 
 Sędzia po meczu może wypełnić raport dotyczący spotkania, w którym podaję wszystkie informacje dotyczące meczu: wynik, żółte kartki, czerwone kartki, karne.
+
+![alt text](https://github.com/wojtekogieglo/symfony-referee-system/blob/master/images/raport.PNG)
 
 ## Informacje o profilu
 
